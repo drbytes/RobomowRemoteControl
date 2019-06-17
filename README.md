@@ -1,4 +1,4 @@
-# RobomowRemoteControl
+
 
 IMPORTANT: This is unfinished and half baked!
 
@@ -16,4 +16,4 @@ See ControlServer.java for more commands
 The telnet session will also report the GPS coordinates grabbed from the phone, to log where the bot has been.
 
 I still need to finish this, it's more of a proof of concept and I'm actually spending most of my free time on NODEJS/RASPBERRY implementation.
-See NodeJSBot.js for the NodeJS implementation, you need to install the NOBLE NPM package.
+See NodeJSBot.js for the barebones NodeJS implementation, you need to install the NOBLE NPM package.
