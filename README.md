@@ -17,3 +17,15 @@ The telnet session will also report the GPS coordinates grabbed from the phone, 
 
 I still need to finish this, it's more of a proof of concept and I'm actually spending most of my free time on NODEJS/RASPBERRY implementation.
 See NodeJSBot.js for the barebones NodeJS implementation, you need to install the NOBLE NPM package.
+
+======================================================
+
+UPDATE
+How to get the main_board id.
+Navigate to http://appprod.robomow.com/CoupleAction.asmx?op=Couple
+
+You need to enter three things; your email, serial number of the bot and your password and hit "invoke".
+For me, that returns :
+<string>{"RossResponseCode":0,"Mainboard":"6411800003071","UserLevel":"Primary","version":"0.5","resultCode":1,"resultMessage":""}</string>
+Mainboard includes the right serialnumber, replace it in the code. Or fork my code and include a dialog that automates this :)
+
