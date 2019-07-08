@@ -20,7 +20,13 @@ See NodeJSBot.js for the barebones NodeJS implementation, you need to install th
 
 ======================================================
 
-UPDATE
+UPDATE 08/07/2019.
+
+@ mattncsu  found another method to discover your motherboard serial, see : https://github.com/drbytes/RobomowRemoteControl/issues/2 for details.
+
+
+
+UPDATE 01/07/2019
 
 How to get the main_board id.
 
