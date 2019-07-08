@@ -22,7 +22,7 @@ See NodeJSBot.js for the barebones NodeJS implementation, you need to install th
 
 UPDATE 08/07/2019.
 
-@ mattncsu  found another method to discover your motherboard serial, see : https://github.com/drbytes/RobomowRemoteControl/issues/2 for details.
+@mattncsu  found another method to discover your motherboard serial, see : https://github.com/drbytes/RobomowRemoteControl/issues/2 for details.
 
 
 
