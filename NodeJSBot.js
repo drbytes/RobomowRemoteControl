@@ -115,7 +115,10 @@ function onAuthServiceDiscoverd(error, services, characteristics) {
         } else {
             console.log('Processing auth request.');
 
-            // Ok, do auth
+            // Ok, do auth, down below I use the byte[] from my motherboard serial, please calculate your own.
+            // !! Use getMoboSerNrToBytes(serial) to get the byte[] for your motherboard.
+            // ie getMoboSerNrToBytes("6411800003071") will return the byte[] below but you need to fill the buffer
+            // until it's 15 in length, padd right with 0.
             authChar.write(new Buffer([54, 52, 49, 49, 56, 48, 48, 48, 48, 51, 48, 55, 49, 0, 0]));
             authChar.read(function (error, data) {
                 for (i = 0; i < data.length; i++) {
@@ -182,7 +185,7 @@ function DoControl(direction, speed, engageCutters) {
     }
 }
 
-function printHexString(data) {
+function printHexString(data) { // Shows output and uses java byte notation
     var res = "";
     var looper = 0;
     while (looper < data.length) {
@@ -193,6 +196,19 @@ function printHexString(data) {
         res = res + p.toString() + " ";
     }
     console.log(res);
+}
+
+function getMoboSerNrToBytes(serialNr){
+  // Creates the byte[] from the motherboard serial to pass it on to the auth challenge.
+  // Please note that the auth should receive a 15 length array, so padd right with 0
+  var bytes = []; 
+  for (var i = 0; i <serialNr.length; ++i) {
+      var code = str.charCodeAt(i);
+      bytes = bytes.concat([code]);
+  }
+
+  console.log('Mobo result', bytes.join(', '));
+  return bytes;
 }
 
 function StartNopper(enabled){
